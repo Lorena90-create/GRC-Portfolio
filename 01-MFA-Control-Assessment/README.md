@@ -1,107 +1,109 @@
 # MFA Security Control Assessment
 
-**Framework:** NIST SP 800-53 IA-2  
-**Type:** Practice project using a fictional scenario  
-**Status:** Completed written assessment
+**Framework:** NIST SP 800-53 IA-2 — Identification and Authentication  
+**Project Type:** Educational Simulation  
+**Status:** Written assessment completed
 
-## Why I Chose This Project
+## 1. Purpose
 
-I wanted to practice evaluating a security control from a GRC perspective instead of only looking at the technical side of cybersecurity.
+The purpose of this project is to practice evaluating a cybersecurity control using basic Governance, Risk, and Compliance (GRC) principles.
 
-I chose multi-factor authentication (MFA) because I have some experience supporting account access and authentication. However, I am still learning how to assess controls, document findings, and explain risk.
+Multi-factor authentication (MFA) was selected because it is an important security measure for protecting user accounts and preventing unauthorized access.
 
-## The Scenario
+The assessment focuses on identifying a control weakness, evaluating the associated risk, and recommending corrective actions.
 
-For this exercise, I reviewed a fictional company that requires MFA for all employee accounts.
+## 2. Scenario
 
-The scenario included two accounts with higher privileges that did not have MFA enabled. The company's policy did not allow exceptions.
+A fictional organization has a security policy requiring MFA for all employee accounts, without exceptions.
 
-My goal was to identify the control issue, determine the potential risk, and recommend how the company should address it.
+During a simulated review, two privileged accounts were identified without MFA enabled.
 
-## What I Found
+These accounts have elevated permissions, making the missing authentication requirement a potential security concern.
 
-**Control reviewed:** NIST SP 800-53 IA-2 — Identification and Authentication
+## 3. Control Assessment
 
-**Finding:** Two privileged accounts did not have MFA enabled.
+**Control:** NIST SP 800-53 IA-2 — Identification and Authentication
 
-**My assessment:** The MFA requirement was not fully met.
+**Finding:** Two privileged accounts do not have MFA enabled.
 
-I considered this a security concern because privileged accounts can make changes or access information that regular accounts cannot. If someone obtained the password for one of these accounts, the lack of MFA could make unauthorized access easier.
+**Assessment Result:** The organization's MFA requirement is not fully met.
 
-I would also want to understand why these accounts were not configured correctly and whether other accounts had the same problem.
+The finding represents a security weakness because privileged accounts may provide access to sensitive information or critical system settings.
 
-## Evidence Reviewed
+Without MFA, compromised credentials could potentially be used to gain unauthorized access.
 
-Because this is a fictional scenario, I worked with the following assumed information:
+## 4. Evidence Considered
 
-- The company has a policy requiring MFA for every employee.
-- Two privileged accounts were identified without MFA.
-- No exceptions to the policy were allowed.
+The assessment is based on the following fictional information:
 
-For a real assessment, I would need to review account settings, access permissions, MFA configuration reports, and any relevant exception records.
+- Organizational policy requires MFA for all employees.
+- Two privileged accounts have MFA disabled.
+- No policy exceptions are permitted.
 
-I did not have actual system logs or configuration screenshots for this exercise.
+In a real assessment, additional evidence would be needed, including MFA configuration reports, user permissions, and relevant authentication records.
 
-## My Risk Assessment
+No actual system testing was performed.
 
-I used a 5×5 risk matrix to practice evaluating likelihood and impact.
+## 5. Risk Assessment
 
-| Category | Rating |
+A 5×5 risk matrix was used to estimate the potential likelihood and impact of the finding.
+
+| Risk Factor | Rating |
 | --- | --- |
-| Likelihood | 4/5 |
-| Impact | 4/5 |
-| Risk score | 16/25 |
-| Risk level | High |
+| Likelihood | 4/5 — Likely |
+| Impact | 4/5 — Major |
+| Risk Score | 16/25 |
+| Overall Risk | High |
 
-### Why I Selected Likelihood 4/5
+### Likelihood Justification
 
-I selected 4 because two accounts with elevated permissions were missing MFA. If their passwords were compromised, an attacker might be able to access those accounts without completing a second authentication step.
+A likelihood rating of 4/5 was selected because two privileged accounts lack MFA protection.
 
-I recognize that I would need more information about the accounts, their exposure, and existing security measures before confirming this rating in a real assessment.
+This increases exposure to credential-based attacks, particularly if account passwords are compromised.
 
-### Why I Selected Impact 4/5
+The rating is preliminary because account exposure, threat activity, and other security controls have not been verified.
 
-I selected 4 because unauthorized access to a privileged account could result in changes to systems, exposure of sensitive information, or disruption of operations.
+### Impact Justification
 
-The actual impact would depend on the permissions assigned to the accounts and the systems they could access.
+An impact rating of 4/5 was selected because unauthorized access to privileged accounts could result in system changes, exposure of sensitive information, or interruption of operations.
 
-### Overall Risk
+The actual impact would depend on the accounts' permissions and the systems they can access.
 
-4 × 4 = **16/25 — High**
+### Overall Risk Rating
 
-For this exercise, I used a sample risk scale where scores from 15 to 19 are considered High. A real organization may use a different risk matrix.
+**4 × 4 = 16/25 — High**
 
-## My Recommended Actions
+For this educational exercise, scores between 15 and 19 are classified as High. Actual organizational risk ratings depend on the approved risk assessment methodology.
 
-If I were supporting the security team, I would recommend:
+## 6. Recommended Remediation
 
-1. Notify the IT or security team about the two accounts.
-2. Confirm whether the accounts still require privileged access.
-3. Enable MFA for both accounts according to company policy.
+The following actions are recommended:
+
+1. Notify the IT security team of the finding.
+2. Verify the affected accounts and their assigned privileges.
+3. Enable MFA for both accounts according to organizational policy.
 4. Investigate why MFA was not enabled.
-5. Review other privileged accounts to check for similar issues.
-6. Document the corrective actions and verify that MFA is working.
+5. Review other privileged accounts for similar configuration issues.
+6. Update account provisioning procedures to reduce the possibility of recurrence.
 
-I would also recommend reviewing the account onboarding process to help prevent the same issue from happening again.
+## 7. Verification and Follow-Up
 
-## How I Would Verify the Issue Was Fixed
+After remediation, the IT security team should verify that MFA is enabled and functioning correctly for both accounts.
 
-After the IT team completed the changes, I would want to confirm that MFA was enabled for both accounts and that the required authentication process worked correctly.
+Updated configuration records should be reviewed and documented as evidence of corrective action.
 
-I would also request updated configuration evidence and document the results before recommending that the finding be closed.
+The finding should remain open until the required security control has been verified.
 
-**Retesting was not performed because this is a simulated exercise.**
+**Retesting Status:** Not performed — simulated assessment.
 
-## What I Learned
+## 8. Lessons Learned
 
-This exercise helped me understand that identifying a security issue is only one part of GRC work.
+This exercise demonstrates that security control assessments involve more than identifying technical weaknesses.
 
-I also need to explain why the issue matters, determine the potential risk, recommend corrective actions, and identify what evidence would be needed to confirm that the problem was resolved.
+An effective assessment also requires documenting findings, evaluating potential risks, recommending remediation, and determining how corrective actions will be verified.
 
-One area I still want to improve is risk scoring. I understand how to calculate likelihood and impact, but I want more practice justifying those ratings using evidence rather than assumptions.
-
-This project is part of my preparation for transitioning from technical cybersecurity work into Governance, Risk, and Compliance.
+Additional practice is needed in evidence collection, risk scoring, and formal control testing to develop stronger GRC assessment skills.
 
 ## Disclaimer
 
-This is an educational project based on a fictional company. It does not include information from my employer or any real client.
+This project is an educational simulation based on a fictional organization. No real employer, client, or government information was used.
