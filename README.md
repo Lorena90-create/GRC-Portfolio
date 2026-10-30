@@ -8,10 +8,11 @@ I am transitioning into Governance, Risk, and Compliance (GRC) and building this
 
 ## Projects
 
-### 1. NIST SP 800-53 IA-2 — MFA Control Assessment
-**Status:** In progress
+### 1. [MFA Security Control Assessment — NIST SP 800-53 IA-2](01-MFA-Control-Assessment/README.md)
 
-Simulated control assessment covering MFA requirements, security findings, risk scoring, and remediation recommendations.
+**Status:** Completed written assessment — Educational Simulation
+
+A simulated assessment of two privileged accounts without MFA. Includes a control finding, risk assessment (16/25 — High), recommended corrective actions, and verification procedures.
 
 ### 2. Cybersecurity Risk Assessment
 **Status:** Planned
