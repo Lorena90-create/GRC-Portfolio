@@ -1,101 +1,107 @@
 # MFA Security Control Assessment
 
-**Framework:** NIST SP 800-53 — IA-2 (Identification and Authentication)  
-**Project Type:** Educational simulation  
-**Assessment Status:** Completed (simulation)
+**Framework:** NIST SP 800-53 IA-2  
+**Type:** Practice project using a fictional scenario  
+**Status:** Completed written assessment
 
-## 1. Objective
+## Why I Chose This Project
 
-Evaluate the implementation of multi-factor authentication (MFA) for privileged user accounts, identify control weaknesses, assess associated risks, and recommend corrective actions.
+I wanted to practice evaluating a security control from a GRC perspective instead of only looking at the technical side of cybersecurity.
 
-## 2. Scenario
+I chose multi-factor authentication (MFA) because I have some experience supporting account access and authentication. However, I am still learning how to assess controls, document findings, and explain risk.
 
-A fictional organization requires MFA for all employee accounts, with no exceptions. During a simulated access-control review, two accounts with elevated privileges were identified without MFA enabled.
+## The Scenario
 
-The assessment focuses on this known policy violation. Additional evidence would be required to determine the full scope and cause.
+For this exercise, I reviewed a fictional company that requires MFA for all employee accounts.
 
-## 3. Control Requirement
+The scenario included two accounts with higher privileges that did not have MFA enabled. The company's policy did not allow exceptions.
 
-NIST SP 800-53 IA-2 addresses identification and authentication of organizational users. Relevant IA-2 enhancements address multi-factor authentication for privileged and non-privileged accounts.
+My goal was to identify the control issue, determine the potential risk, and recommend how the company should address it.
 
-**Organizational policy:** MFA must be enabled for all employee accounts without exceptions.
+## What I Found
 
-## 4. Assessment Approach and Evidence
+**Control reviewed:** NIST SP 800-53 IA-2 — Identification and Authentication
 
-**Assessment methods:** Examine configuration records, interview responsible personnel, and test authentication settings where authorized.
+**Finding:** Two privileged accounts did not have MFA enabled.
 
-| Evidence | Simulated result |
+**My assessment:** The MFA requirement was not fully met.
+
+I considered this a security concern because privileged accounts can make changes or access information that regular accounts cannot. If someone obtained the password for one of these accounts, the lack of MFA could make unauthorized access easier.
+
+I would also want to understand why these accounts were not configured correctly and whether other accounts had the same problem.
+
+## Evidence Reviewed
+
+Because this is a fictional scenario, I worked with the following assumed information:
+
+- The company has a policy requiring MFA for every employee.
+- Two privileged accounts were identified without MFA.
+- No exceptions to the policy were allowed.
+
+For a real assessment, I would need to review account settings, access permissions, MFA configuration reports, and any relevant exception records.
+
+I did not have actual system logs or configuration screenshots for this exercise.
+
+## My Risk Assessment
+
+I used a 5×5 risk matrix to practice evaluating likelihood and impact.
+
+| Category | Rating |
 | --- | --- |
-| MFA policy | MFA required for all employee accounts |
-| Account configuration review | Two privileged accounts have MFA disabled |
-| Privilege review | Both affected accounts have elevated permissions |
-| Approved exception records | No exceptions permitted by policy |
+| Likelihood | 4/5 |
+| Impact | 4/5 |
+| Risk score | 16/25 |
+| Risk level | High |
 
-**Evidence limitations:** The scenario does not provide authentication logs, account exposure details, system criticality, or evidence of compromise. Those items would be requested during a real assessment.
+### Why I Selected Likelihood 4/5
 
-## 5. Finding
+I selected 4 because two accounts with elevated permissions were missing MFA. If their passwords were compromised, an attacker might be able to access those accounts without completing a second authentication step.
 
-**Finding ID:** MFA-001  
-**Title:** MFA Not Enabled for Two Privileged Accounts  
-**Control:** NIST SP 800-53 IA-2 and applicable MFA enhancements  
-**Control effectiveness:** Not fully effective
+I recognize that I would need more information about the accounts, their exposure, and existing security measures before confirming this rating in a real assessment.
 
-Two privileged accounts do not have MFA enabled, contrary to the organization's policy. This weakness increases the risk that compromised credentials could be used to gain unauthorized privileged access.
+### Why I Selected Impact 4/5
 
-## 6. Risk Assessment
+I selected 4 because unauthorized access to a privileged account could result in changes to systems, exposure of sensitive information, or disruption of operations.
 
-**Method:** Qualitative 5×5 likelihood-impact matrix
+The actual impact would depend on the permissions assigned to the accounts and the systems they could access.
 
-| Factor | Score | Rationale |
-| --- | --- | --- |
-| Likelihood | 4/5 — Likely | Missing MFA increases exposure to credential-based attacks. The two affected accounts have elevated privileges. The rating is provisional because actual exposure and threat activity are unknown. |
-| Impact | 4/5 — Major | Unauthorized use of privileged accounts could allow sensitive data access, unauthorized configuration changes, or service disruption. Actual impact depends on the accounts' permissions and accessible systems. |
-| Overall risk | 16/25 — High | Likelihood 4 × Impact 4 = 16. This exercise defines 15–19 as High. |
+### Overall Risk
 
-### Risk rating scale used for this exercise
+4 × 4 = **16/25 — High**
 
-- 1–4: Low
-- 5–9: Moderate
-- 10–14: Elevated
-- 15–19: High
-- 20–25: Critical
+For this exercise, I used a sample risk scale where scores from 15 to 19 are considered High. A real organization may use a different risk matrix.
 
-**Preliminary risk rating: HIGH**
+## My Recommended Actions
 
-The rating is an educational judgment, not a measured probability or confirmed business impact. A real assessment would apply the organization's approved risk criteria.
+If I were supporting the security team, I would recommend:
 
-## 7. Recommended Remediation
+1. Notify the IT or security team about the two accounts.
+2. Confirm whether the accounts still require privileged access.
+3. Enable MFA for both accounts according to company policy.
+4. Investigate why MFA was not enabled.
+5. Review other privileged accounts to check for similar issues.
+6. Document the corrective actions and verify that MFA is working.
 
-1. **Immediate containment:** Notify the security and IAM teams, verify the two accounts and their business need, and apply temporary restrictions if appropriate.
-2. **Correct the finding:** Enable and verify MFA for both privileged accounts using organization-approved methods.
-3. **Investigate root cause:** Review account provisioning, authentication policies, and configuration enforcement to determine why MFA was missing.
-4. **Prevent recurrence:** Implement automated checks for MFA coverage and periodic reviews of privileged accounts.
-5. **Document completion:** Record the changes, responsible personnel, verification results, and closure evidence.
+I would also recommend reviewing the account onboarding process to help prevent the same issue from happening again.
 
-**Suggested remediation owner:** Identity and Access Management (IAM) team, with security oversight.
+## How I Would Verify the Issue Was Fixed
 
-**Suggested target:** Prioritize immediate review and establish a corrective-action deadline based on organizational policy and risk acceptance procedures.
+After the IT team completed the changes, I would want to confirm that MFA was enabled for both accounts and that the required authentication process worked correctly.
 
-## 8. Validation and Retesting
+I would also request updated configuration evidence and document the results before recommending that the finding be closed.
 
-The assessor should verify that:
+**Retesting was not performed because this is a simulated exercise.**
 
-- MFA is enabled for both affected accounts.
-- Each account successfully completes the approved MFA authentication flow.
-- Privileged access is not granted when required MFA is missing.
-- Configuration records or logs support the remediation.
-- A broader review identifies any similar gaps.
+## What I Learned
 
-**Closure criteria:** Both accounts meet the MFA requirement, evidence is retained, and the security team confirms the finding is resolved.
+This exercise helped me understand that identifying a security issue is only one part of GRC work.
 
-**Retest status:** Not performed — fictional scenario.
+I also need to explain why the issue matters, determine the potential risk, recommend corrective actions, and identify what evidence would be needed to confirm that the problem was resolved.
 
-## 9. Lessons Learned
+One area I still want to improve is risk scoring. I understand how to calculate likelihood and impact, but I want more practice justifying those ratings using evidence rather than assumptions.
 
-This exercise helped me practice identifying a control gap, distinguishing a policy violation from a risk rating, documenting evidence limitations, explaining likelihood and impact, and defining remediation and retesting steps.
-
-In a real GRC assessment, I would seek additional evidence, validate assumptions with control owners, and follow the organization's risk assessment methodology before finalizing the rating.
+This project is part of my preparation for transitioning from technical cybersecurity work into Governance, Risk, and Compliance.
 
 ## Disclaimer
 
-This is an independent educational simulation using fictional information. It is not an assessment of any real employer, client, or government system. No confidential information is included.
+This is an educational project based on a fictional company. It does not include information from my employer or any real client.
