@@ -2,7 +2,7 @@
 
 **Reference:** NIST SP 800-30 Rev. 1 — Guide for Conducting Risk Assessments  
 **Project Type:** Educational simulation  
-**Status:** Practice assessment
+**Status:** Completed — Educational Simulation
 
 ## 1. Purpose
 
