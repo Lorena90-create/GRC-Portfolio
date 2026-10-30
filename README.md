@@ -1,6 +1,5 @@
 # GRC-Portfolio
 My cybersecurity learning portfolio documenting hands-on projects in Governance, Risk, and Compliance (GRC), including NIST security controls, risk assessments, vulnerability management, and compliance practices.
-# GRC Portfolio
 
 ## About Me
 I am a Network Technician with foundational cybersecurity experience in security monitoring, vulnerability tracking, access management, and technical documentation.
